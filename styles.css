@@ -99,3 +99,9 @@ button {
 .user-card button {
     margin-top: 0.75rem;
 }
+
+.error-message {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    color: red
+}
