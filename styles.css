@@ -105,3 +105,44 @@ button {
     margin-bottom: 0.5rem;
     color: red
 }
+
+.pokemon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.pokemon-card {
+    width: 350px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+}
+
+.pokemon-card img {
+    width: 300px;
+    height: 300px;
+    margin: 5px 0;
+    object-fit: contain;
+}
+
+.pokemon-types {
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.pokemon-abilities {
+    margin: 10px 0;
+}
+
+.pokemon-stats {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.pokemon-stats ul {
+    padding-left: 20px;
+}

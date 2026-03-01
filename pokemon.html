@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- Carta de pokemon -->
+    <main class="main-content">
+        <div class="pokemon-container">
+            <h1>Pokemon Info</h1>
+            <div id="pokemon-data"></div>
+        </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="auth.js"></script>
+    <script>
+        requireAuth();
+    </script>
+    <script src="layout.js"></script>
+    <script src="pokemon.js"></script>
+</body>
+</html>
