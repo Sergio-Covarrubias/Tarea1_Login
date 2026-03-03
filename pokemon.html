@@ -11,8 +11,24 @@
     <!-- Carta de pokemon -->
     <main class="main-content">
         <div class="pokemon-container">
-            <h1>Pokemon Info</h1>
-            <div id="pokemon-data"></div>
+            <h1>Pokemons</h1>
+
+            <!-- Filtros -->
+            <div class="filters">
+                <input type="text" id="search-name" placeholder="Search by name or ID">
+                <input type="text" id="search-type" placeholder="Filter by type (grass, fire...)">
+                <button id="search-btn">Search</button>
+            </div>
+
+            <!-- Lista -->
+            <div id="pokemon-list" class="pokemon-grid"></div>
+
+            <!-- Paginación -->
+            <div class="pagination">
+                <button id="prev-btn">Previous</button>
+                <span id="page-info"></span>
+                <button id="next-btn">Next</button>
+            </div>
         </div>
     </main>
 
@@ -24,4 +40,5 @@
     <script src="layout.js"></script>
     <script src="pokemon.js"></script>
 </body>
+
 </html>
