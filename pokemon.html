@@ -8,31 +8,130 @@
 </head>
 <body>
 
-    <!-- Carta de pokemon -->
+    <!-- Contenedor principal -->
     <main class="main-content">
         <div class="pokemon-container">
+
             <h1>Pokemons</h1>
 
-            <!-- Filtros -->
+            <!-- =========================
+                 FILTROS DE BÚSQUEDA
+                 Permiten buscar por nombre/ID o filtrar por tipo
+            ========================== -->
             <div class="filters">
                 <input type="text" id="search-name" placeholder="Search by name or ID">
                 <input type="text" id="search-type" placeholder="Filter by type (grass, fire...)">
                 <button id="search-btn">Search</button>
             </div>
 
-            <!-- Lista -->
+            <!-- =========================
+                 LISTA DE POKEMONS
+                 Aquí se renderizan dinámicamente las cartas
+                 desde pokemon.js
+            ========================== -->
             <div id="pokemon-list" class="pokemon-grid"></div>
 
-            <!-- Paginación -->
+            <!-- =========================
+                 PAGINACIÓN
+                 Controla la navegación entre páginas
+            ========================== -->
             <div class="pagination">
                 <button id="prev-btn">Previous</button>
                 <span id="page-info"></span>
                 <button id="next-btn">Next</button>
             </div>
+
+            <!-- =====================================================
+                 SISTEMA DE BATALLA
+                 Permite seleccionar dos pokemons de la página actual
+                 y ejecutar una simulación de combate automática
+            ====================================================== -->
+            <div class="battle-container">
+
+                <h2>Pokemon Battle</h2>
+
+                <!-- =========================
+                     SELECTORES DE POKEMON
+                     Se llenan automáticamente con los
+                     pokemons de la página actual
+                ========================== -->
+                <div class="battle-selectors">
+
+                    <select id="pokemon1-select">
+                        <option value="">Select Pokemon 1</option>
+                    </select>
+
+                    <span>VS</span>
+
+                    <select id="pokemon2-select">
+                        <option value="">Select Pokemon 2</option>
+                    </select>
+
+                    <!-- Botón que inicia la simulación de batalla -->
+                    <button id="start-battle">Start Battle</button>
+
+                </div>
+
+                <!-- =========================
+                     ARENA DE BATALLA
+                     Se muestra cuando empieza la pelea
+                     Muestra ambos pokemons y sus barras de vida
+                ========================== -->
+                <div id="battle-arena" class="battle-arena hidden">
+
+                    <!-- Pokemon 1 -->
+                    <div class="battle-pokemon">
+                        <h3 id="p1-name"></h3>
+                        <img id="p1-img">
+
+                        <!-- Barra de vida -->
+                        <div class="hp-bar">
+                            <div id="p1-hp"></div>
+                        </div>
+
+                        <!-- Texto del porcentaje de HP -->
+                        <p><span id="p1-hp-text">100</span>% HP</p>
+                    </div>
+
+                    <!-- =========================
+                         LOG DE COMBATE
+                         Muestra turno por turno lo que ocurre
+                    ========================== -->
+                    <div class="battle-log-container">
+                        <h3 id="battle-status">Battle Starting...</h3>
+                        <ul id="battle-log"></ul>
+                    </div>
+
+                    <!-- Pokemon 2 -->
+                    <div class="battle-pokemon">
+                        <h3 id="p2-name"></h3>
+                        <img id="p2-img">
+
+                        <!-- Barra de vida -->
+                        <div class="hp-bar">
+                            <div id="p2-hp"></div>
+                        </div>
+
+                        <!-- Texto del porcentaje de HP -->
+                        <p><span id="p2-hp-text">100</span>% HP</p>
+                    </div>
+
+                </div>
+
+                <!-- =========================
+                     PANTALLA DE GANADOR
+                     Aparece cuando termina la batalla
+                ========================== -->
+                <div id="winner-container" class="hidden">
+                    <h2>Winner</h2>
+                    <img id="winner-img">
+                    <h3 id="winner-name"></h3>
+                </div>
+
+            </div>
         </div>
     </main>
 
-    <!-- Scripts -->
     <script src="auth.js"></script>
     <script>
         requireAuth();
@@ -40,5 +139,4 @@
     <script src="layout.js"></script>
     <script src="pokemon.js"></script>
 </body>
-
 </html>
